@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './welcome.component.html'
 })
 export class WelcomeComponent {
-  public pageTitle = 'Welcome to Star Wars Vehicle Sales';
+  public pageTitle = 'Angular signal ';
 
 }

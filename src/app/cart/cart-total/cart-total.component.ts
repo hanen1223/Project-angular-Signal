@@ -11,15 +11,15 @@ import { CartService } from '../cart.service';
 })
 export class CartTotalComponent {
 
-  cartItems$ = this.cartService.cartItems$;
+  cartItems = this.cartService.cartItems;
 
-  subTotal$ = this.cartService.subTotal$;
+  subTotal = this.cartService.subTotal;
 
-  deliveryFee$ = this.cartService.deliveryFee$;
+  deliveryFee = this.cartService.deliveryFee;
 
-  tax$ = this.cartService.tax$;
+  tax = this.cartService.tax;
 
-  totalPrice$ = this.cartService.totalPrice$;
-  
+  totalPrice = this.cartService.totalPrice;
+
   constructor(private cartService: CartService) { }
 }

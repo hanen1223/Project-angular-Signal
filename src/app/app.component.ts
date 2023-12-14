@@ -1,5 +1,4 @@
-import { Component, inject } from '@angular/core';
-import { map } from 'rxjs';
+import {Component, computed, inject} from '@angular/core';
 
 import { CartService } from './cart/cart.service';
 
@@ -10,10 +9,7 @@ import { CartService } from './cart/cart.service';
 })
 export class AppComponent {
   pageTitle = 'Star Wars Vehicle Sales';
-  cartService = inject(CartService);
-  
-  cartCount$ = this.cartService.cartItems$.pipe(
-    map(items => items.reduce((acc, item) => acc + item.quantity, 0))
-  );
+  cartCount = computed(()=>this.cartService.cartItems().reduce((acc, item) => acc + item.quantity, 0));
 
+constructor(private cartService:CartService) {}
 }

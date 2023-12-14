@@ -8,14 +8,14 @@ import { CartItemComponent } from "../cart-item/cart-item.component";
   selector: 'sw-cart-list',
   standalone: true,
   template: `
-  <div *ngFor="let item of cartItems$ | async">
+  <div *ngFor="let item of cartItems()">
      <sw-cart-item [item]='item'></sw-cart-item>
   </div>
   `,
   imports: [AsyncPipe, NgFor, CartItemComponent]
 })
 export class CartListComponent {
-  cartItems$ = this.cartService.cartItems$;
+  cartItems = this.cartService.cartItems;
 
   constructor(private cartService: CartService) { }
 }
